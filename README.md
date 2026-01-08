@@ -31,7 +31,7 @@ Azure, AWS, Git, GitHub, Google Colab
 
 B.Sc. in Geological Sciences, National University of Colombia
 
-M.Sc. in Applied Economics (in progress), University of Buenos Aires
+M.Sc. in Applied Economics (in progress), University of Buenos Aires (candidate)
 
 ---
 
