@@ -4,7 +4,7 @@ Julián Delgadillo Marín – Geologist | Applied Economics & Data Science
 
 ## About Me
 
-I am a Geologist with training in Applied Economics, integrating Earth Science expertise with quantitative analysis and computational approaches. My experience includes geological core data validation, geoscience data quality control, geospatial analysis, and structural and geological characterization in applied consulting projects. My interests focus on Earth Sciences, quantitative modeling, and data-driven analysis, with an emphasis on research-oriented and reproducible workflows.
+Geologist with experience working with geoscience data and geological information. My background includes data analysis, interpretation of geological and geospatial datasets, and support for applied studies in Earth Science and natural resource contexts.
 
 ---
 
