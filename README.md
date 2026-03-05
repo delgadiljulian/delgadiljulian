@@ -27,14 +27,6 @@ Azure, AWS, Git, GitHub, Google Colab
 
 ---
 
-## Education
-
-B.Sc. in Geological Sciences, National University of Colombia
-
-M.Sc. in Applied Economics (in progress), University of Buenos Aires (candidate)
-
----
-
 ## Contact Me
 
 Email: jadelgadillomarin@outlook.com
