@@ -13,16 +13,13 @@ Geologist with experience working with geoscience data and geological informatio
 Programming & Data Analysis:
 Python, SQL, STATA, MATLAB, R
 
-Econometrics & Statistics:
-Panel data models (FE, RE, TWFE), Logit/Probit, causal inference, predictive modeling
-
 Geospatial & Earth Science Software:
 ArcGIS, QGIS
 
 Data Visualization & Reporting:
 Power BI, Tableau, Matplotlib, LaTeX
 
-Cloud & Productivity:
+Productivity:
 GitHub, Google Colab
 
 ---
