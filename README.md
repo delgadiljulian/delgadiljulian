@@ -17,13 +17,13 @@ Econometrics & Statistics:
 Panel data models (FE, RE, TWFE), Logit/Probit, causal inference, predictive modeling
 
 Geospatial & Earth Science Software:
-ArcGIS, QGIS, Leapfrog, Petrel, Vulcan
+ArcGIS, QGIS
 
 Data Visualization & Reporting:
 Power BI, Tableau, Matplotlib, LaTeX
 
 Cloud & Productivity:
-Azure, AWS, Git, GitHub, Google Colab
+GitHub, Google Colab
 
 ---
 
