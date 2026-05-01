@@ -1,4 +1,4 @@
-Julián Delgadillo Marín – Geologist | Applied Economics & Data Science
+Julián Delgadillo Marín
 
 ---
 
