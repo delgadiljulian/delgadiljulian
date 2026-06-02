@@ -17,7 +17,7 @@ Geospatial & Earth Science Software:
 ArcGIS, QGIS
 
 Data Visualization & Reporting:
-Power BI, Tableau, Matplotlib, LaTeX
+Tableau, Matplotlib, LaTeX
 
 Productivity:
 GitHub, Google Colab
