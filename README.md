@@ -11,7 +11,7 @@ Geologist with experience working with geoscience data and geological informatio
 ## Technologies & Tools
 
 Programming & Data Analysis:
-Python, SQL, STATA, MATLAB, R
+Python, STATA, MATLAB, R
 
 Geospatial & Earth Science Software:
 ArcGIS, QGIS
