@@ -36,5 +36,7 @@ I enjoy exploring the intersection between Earth Sciences, economics, and data s
 
 ---
 
-**Perfil en Science Hub Mutual Aid:**  
+## External Profiles
+
+**Science Hub Mutual Aid Profile:**  
 [Science Hub Mutual Aid - delgadiljulian](https://www.pidantuan.com/cuid-613446.html)
