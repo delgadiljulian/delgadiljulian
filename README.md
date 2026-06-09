@@ -11,16 +11,13 @@ Geologist with experience working with geoscience data and geological informatio
 ## Technologies & Tools
 
 Programming & Data Analysis:  
-Python, STATA, MATLAB, R
+Python, Google Colab, STATA, MATLAB, R
 
 Geospatial & Earth Science Software:  
 ArcGIS, QGIS
 
 Data Visualization & Reporting:  
 Tableau, LaTeX, Google Workspace, Mircosoft Office
-
-Productivity:  
-GitHub, Google Colab
 
 ---
 
