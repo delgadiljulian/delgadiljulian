@@ -23,7 +23,7 @@ Tableau, LaTeX, Google Workspace, Mircosoft Office
 
 ## Contact Me
 
-Email: jadelgadillomarin@outlook.com
+Email: jadelgadillomarin@gmail.com
 
 ---
 
