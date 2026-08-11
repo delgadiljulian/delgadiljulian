@@ -4,7 +4,7 @@ Julián Delgadillo Marín
 
 ## About Me
 
-Geologist with experience working with geoscience data and geological information. My background includes data analysis, interpretation of geological and geospatial datasets, and support for applied research projects.
+Geologist with a strong interest in subsurface data and geological information. My background combines geological analysis, geospatial datasets, and economic evaluation to support applied studies in Earth Science and natural resource development.
 
 ---
 
