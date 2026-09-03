@@ -14,7 +14,7 @@ Programming & Data Analysis:
 Python, Google Colab, JavaScript, STATA, MATLAB, R, HTML
 
 Geospatial & Earth Science Software:  
-ArcGIS PRO, QGIS
+ArcGIS Pro, QGIS
 
 Data Visualization & Reporting:  
 Tableau, LaTeX, Google Workspace, Mircosoft Office
