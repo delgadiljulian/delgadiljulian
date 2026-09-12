@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sistematización inicial de la Mesa Territorio del Community Challenge: reparar para habitar después del terremoto en Chocó.">
+  <title>Equipo Territorio | Reparar para habitar después del terremoto</title>
+  <style>
+    :root {
+      --ink:#172c31; --muted:#5d6f70; --paper:#f6f3ea; --white:#fffef9;
+      --river:#167d92; --river2:#65b8c3; --forest:#2f6652; --leaf:#82a85e;
+      --clay:#d36a48; --gold:#dfa72e; --sand:#e8dcc5; --red:#b4473c;
+      --line:rgba(23,44,49,.15); --shadow:0 18px 55px rgba(23,44,49,.12);
+      --radius:22px; --max:1240px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit} button{font:inherit}
+    .topbar{position:sticky;top:0;z-index:30;background:rgba(246,243,234,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .topbar-inner{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:13px 22px}
+    .brand{font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.brand span{color:var(--river)}
+    nav{display:flex;gap:7px;overflow:auto;scrollbar-width:none} nav a{white-space:nowrap;text-decoration:none;padding:8px 11px;border-radius:999px;font-size:.78rem;font-weight:750;color:var(--muted)} nav a:hover{background:white;color:var(--ink)}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:white;padding:92px 22px 76px}
+    .hero:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 72% 35%,rgba(101,184,195,.34),transparent 28%),radial-gradient(circle at 90% 85%,rgba(223,167,46,.18),transparent 26%)}
+    .hero:after{content:"";position:absolute;width:760px;height:160px;border:24px solid rgba(101,184,195,.14);border-radius:50%;transform:rotate(-16deg);right:-170px;bottom:-40px}
+    .wrap{max-width:var(--max);margin:auto;position:relative}
+    .eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;font-size:.74rem;color:var(--river2)}
+    .eyebrow:before{content:"";width:34px;height:3px;background:currentColor}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,8vw,6.5rem);letter-spacing:-.055em;line-height:.88;margin:26px 0 28px;max-width:980px}
+    .hero-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:48px;align-items:end}
+    .lead{font-size:clamp(1.04rem,2vw,1.28rem);max-width:790px;color:#d8e7e5;margin:0}
+    .hero-meta{display:grid;gap:12px}.meta-card{border-left:2px solid var(--clay);padding-left:14px}.meta-card b{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#aac8c7}.meta-card span{font-size:.94rem}
+    .status{display:inline-flex;margin-top:30px;gap:10px;align-items:center;border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 14px;color:#d9e7e4;font-size:.78rem}.status i{width:8px;height:8px;background:var(--gold);border-radius:50%}
+    main section{padding:76px 22px}.section-alt{background:var(--white);border-block:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:45px;margin-bottom:38px;align-items:start}
+    .kicker{font-weight:900;color:var(--river);font-size:.75rem;letter-spacing:.16em;text-transform:uppercase}
+    h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4.3vw,3.7rem);line-height:1.02;letter-spacing:-.035em;margin:7px 0 0}
+    .section-intro{font-size:1.08rem;color:var(--muted);max-width:760px;margin:5px 0 0}
+    h3{font-size:1.08rem;line-height:1.25;margin:0 0 10px} h4{margin:0 0 6px;font-size:.88rem;text-transform:uppercase;letter-spacing:.08em;color:var(--forest)}
+    p{margin:0 0 12px}.note{font-size:.83rem;color:var(--muted)}
+    .thesis{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .thesis-main{background:var(--river);color:white;border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+    .thesis-main blockquote{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.12;margin:0}
+    .thesis-side{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mini{background:white;border:1px solid var(--line);border-radius:18px;padding:22px}.mini strong{display:block;font-size:1.35rem;color:var(--clay);margin-bottom:8px}
+    .scope{margin-top:20px;padding:18px 20px;border:1px dashed rgba(23,44,49,.28);border-radius:16px;background:rgba(255,255,255,.44)}
+    .map-shell{background:#10272c;color:white;border-radius:28px;padding:28px;box-shadow:var(--shadow);overflow:hidden}
+    .map-label{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:16px}.map-label span{font-size:.75rem;color:#a9c6c5}
+    .system-map{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:110px 200px;padding:55px 90px;min-height:500px}
+    .system-map:before{content:"";position:absolute;left:50%;top:-8%;height:116%;width:52px;transform:translateX(-50%) rotate(7deg);background:linear-gradient(90deg,transparent 0 13%,var(--river) 13% 36%,var(--river2) 36% 64%,var(--river) 64% 87%,transparent 87%);border-radius:50% 40% 55% 42%;opacity:.74}
+    .system-map:after{content:"RÍO · CONECTOR SOCIAL, ECOLÓGICO, ECONÓMICO Y LOGÍSTICO";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-83deg);font-size:.65rem;letter-spacing:.16em;font-weight:900;white-space:nowrap;color:white}
+    .map-node{position:relative;z-index:2;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:20px;min-height:126px}.map-node:nth-child(even){transform:translateY(34px)}
+    .map-node b{display:block;color:#8fd0d7;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}.map-node strong{display:block;font-family:Georgia,serif;font-size:1.45rem;margin-bottom:7px}.map-node p{font-size:.84rem;color:#d4e2df}
+    .map-foot{display:flex;gap:10px;flex-wrap:wrap;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}.chip{font-size:.72rem;border:1px solid rgba(255,255,255,.19);border-radius:999px;padding:6px 10px;color:#cfe1df}
+    .flow{display:grid;grid-template-columns:1fr 42px 1fr 42px 1fr;align-items:stretch;gap:10px}.flow-col{border-radius:20px;padding:24px;border:1px solid var(--line);background:white}.flow-col.cause{border-top:5px solid var(--gold)}.flow-col.pressure{border-top:5px solid var(--clay)}.flow-col.effect{border-top:5px solid var(--red)}.arrow{display:grid;place-items:center;font-size:1.8rem;color:var(--river)}
+    .clean{padding-left:18px;margin:10px 0 0}.clean li{margin:7px 0}.clean li::marker{color:var(--river)}
+    .warning{margin-top:22px;background:#fff7e7;border-left:5px solid var(--gold);padding:20px;border-radius:0 16px 16px 0}.warning strong{color:#7d5610}
+    .components{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.component{border-radius:22px;background:white;border:1px solid var(--line);overflow:hidden;box-shadow:0 8px 26px rgba(23,44,49,.05)}.component-wide{grid-column:1/-1}.component-top{display:flex;gap:16px;padding:24px 24px 15px}.num{flex:0 0 42px;width:42px;height:42px;border-radius:13px;background:var(--ink);color:white;display:grid;place-items:center;font-weight:900}.component p{color:var(--muted)}.component-body{padding:0 24px 24px}.deliverables{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}.deliverable{background:var(--paper);border-radius:13px;padding:13px;font-size:.8rem}.deliverable b{display:block;color:var(--forest);margin-bottom:4px}
+    .theory{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.theory-step{position:relative;background:white;border:1px solid var(--line);border-radius:18px;padding:21px}.theory-step:not(:last-child):after{content:"→";position:absolute;right:-20px;top:50%;z-index:2;color:var(--river);font-size:1.4rem;font-weight:900}.theory-step b{display:block;color:var(--clay);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}.theory-step p{font-size:.84rem;color:var(--muted)}
+    .discipline{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}.tag{font-size:.68rem;font-weight:850;text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;border-radius:999px;background:#e7efeb;color:var(--forest)}
+    .gates{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gate{border-radius:20px;padding:23px;color:white}.gate.red{background:#8f3e38}.gate.amber{background:#a66f12}.gate.green{background:#2f6652}.gate .dot{width:13px;height:13px;border:3px solid rgba(255,255,255,.7);border-radius:50%;margin-bottom:14px}.gate p{font-size:.88rem;color:rgba(255,255,255,.88)}
+    .timeline{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.phase{background:white;border:1px solid var(--line);border-radius:22px;padding:26px;position:relative}.phase:before{content:"";position:absolute;top:0;left:26px;right:26px;height:5px;background:var(--river);border-radius:0 0 8px 8px}.phase:nth-child(2):before{background:var(--gold)}.phase:nth-child(3):before{background:var(--forest)}.time{font-weight:900;color:var(--river);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}.phase h3{font-family:Georgia,serif;font-size:1.65rem;margin-top:8px}.phase ol{padding-left:20px;margin-bottom:0}.phase li{margin:8px 0;font-size:.88rem}
+    .matrix-wrap{overflow:auto;border-radius:20px;border:1px solid var(--line);background:white}table{border-collapse:collapse;width:100%;min-width:850px}th,td{padding:16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);font-size:.84rem}th{background:var(--ink);color:white;font-size:.7rem;text-transform:uppercase;letter-spacing:.09em}tr:last-child td{border-bottom:0}.pill{display:inline-block;border-radius:999px;padding:4px 8px;font-size:.68rem;font-weight:900}.high{background:#dcebdc;color:#28533e}.med{background:#faebc7;color:#79530b}.pilot{background:#dcecef;color:#126071}
+    .challenge-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.answer-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:25px}.answer-card.full{grid-column:1/-1}.answer-card .label{font-size:.7rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--clay);margin-bottom:7px}.answer-card h3{font-family:Georgia,serif;font-size:1.55rem}.subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.sub{background:var(--paper);border-radius:14px;padding:14px}.sub b{display:block;color:var(--forest);font-size:.78rem;text-transform:uppercase;margin-bottom:6px}.sub p{font-size:.82rem}
+    .governance{display:grid;grid-template-columns:1fr 1fr;gap:20px}.actor-list{display:grid;gap:10px}.actor{display:grid;grid-template-columns:145px 1fr;gap:15px;padding:15px;border-bottom:1px solid var(--line)}.actor b{color:var(--forest)}
+    .decision{background:var(--ink);color:white;border-radius:24px;padding:28px}.decision h3{font-family:Georgia,serif;font-size:1.7rem}.decision ol{padding-left:20px}.decision li{margin:12px 0;color:#d7e4e2}
+    .indicators{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.indicator{background:white;border:1px solid var(--line);border-radius:18px;padding:19px}.indicator b{display:block;color:var(--clay);font-size:1.42rem}.indicator span{font-size:.8rem;color:var(--muted)}
+    .risks{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.risk{display:grid;grid-template-columns:35px 1fr;gap:12px;background:white;border:1px solid var(--line);border-radius:17px;padding:17px}.risk i{font-style:normal;width:32px;height:32px;display:grid;place-items:center;background:#f5e6df;color:var(--red);border-radius:10px;font-weight:900}.risk p{font-size:.83rem;color:var(--muted)}
+    details{border:1px solid var(--line);background:white;border-radius:15px;padding:0 17px}details+details{margin-top:9px}summary{cursor:pointer;font-weight:850;padding:16px 0}details div{padding:0 0 16px;color:var(--muted);font-size:.88rem}
+    .source-list{columns:2;column-gap:35px}.source-list li{break-inside:avoid;margin:0 0 10px;font-size:.82rem;color:var(--muted)}
+    .footer{background:var(--ink);color:white;padding:45px 22px}.footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}.footer p{color:#bcd0cf}.print-btn{border:0;background:var(--river);color:white;border-radius:999px;padding:11px 16px;font-weight:850;cursor:pointer}.print-btn:hover{background:#11697a}
+    .reveal{opacity:0;transform:translateY(12px);transition:.55s ease}.reveal.on{opacity:1;transform:none}
+    @media(max-width:900px){.hero-grid,.section-head,.thesis,.governance,.footer-grid{grid-template-columns:1fr}.system-map{padding:40px 15px;gap:100px 80px}.components,.challenge-grid,.risks{grid-template-columns:1fr}.component-wide,.answer-card.full{grid-column:auto}.deliverables,.subgrid,.indicators{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.timeline,.gates,.theory{grid-template-columns:1fr}.theory-step:not(:last-child):after{content:"↓";right:50%;top:auto;bottom:-24px}.actor{grid-template-columns:1fr}.source-list{columns:1}}
+    @media(max-width:600px){nav{display:none}.hero{padding-top:65px}h1{font-size:3.25rem}.thesis-side,.deliverables,.subgrid,.indicators{grid-template-columns:1fr}.system-map{grid-template-columns:1fr;padding:25px 8px 25px 74px;gap:12px}.system-map:before{left:34px;width:35px}.system-map:after{left:34px;font-size:.52rem}.map-node:nth-child(even){transform:none}.map-label{align-items:flex-start;flex-direction:column}}
+    @media print{.topbar,.print-btn{display:none!important}.hero{padding:45px 20px}.hero:after{display:none}main section{padding:36px 18px}.reveal{opacity:1;transform:none}.component,.phase,.answer-card,.gate,.risk,.indicator,.map-shell{break-inside:avoid;box-shadow:none}.source-list{columns:1}body{background:white}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Equipo <span>Territorio</span></div>
+      <nav aria-label="Navegación principal">
+        <a href="#lectura">Lectura</a><a href="#mapa">Mapa</a><a href="#diagnostico">Diagnóstico</a><a href="#propuesta">Propuesta</a><a href="#ruta">Ruta</a><a href="#challenge">Resultados</a><a href="#viabilidad">Viabilidad</a>
+      </nav>
+      <button class="print-btn" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+  </header>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Community Challenge · Mesa Territorio</div>
+      <h1>Reparar para habitar después del terremoto</h1>
+      <div class="hero-grid">
+        <p class="lead">Propuesta inicial para reensamblar territorio, hábitat y capacidades a partir del río, el conocimiento local y una reconstrucción técnicamente segura. Diseñar <strong>con el territorio</strong>, no para él.</p>
+        <div class="hero-meta">
+          <div class="meta-card"><b>Ámbito inicial</b><span>Quibdó, Nóvita, Andagoya y corredor del río San Juan</span></div>
+          <div class="meta-card"><b>Base de trabajo</b><span>Inmersión territorial, concepto geológico-geotécnico y co-creación académica</span></div>
+          <div class="meta-card"><b>Carácter</b><span>Borrador inicial para contraste con comunidades y equipos</span></div>
+        </div>
+      </div>
+      <div class="status"><i></i> Versión 0.1 · Documento de discusión · Septiembre de 2026</div>
+    </div>
+  </header>
+
+  <main>
+    <section id="lectura">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">01 · Lectura estratégica</div><h2>La reconstrucción es un proyecto territorial</h2></div>
+          <p class="section-intro">El daño no se explica únicamente por el sismo. Surge de la interacción entre condiciones del terreno y del río, vulnerabilidades constructivas previas, mantenimiento, decisiones de ocupación, conectividad desigual y capacidades institucionales limitadas. Por eso, reparar viviendas sin intervenir el sistema que las sostiene reproduciría el riesgo.</p>
+        </div>
+        <div class="thesis">
+          <div class="thesis-main"><blockquote>Reconstruir mejor significa recuperar seguridad y patrimonio sin romper el arraigo fluvial, la propiedad colectiva, las redes de cuidado ni los saberes de autoconstrucción.</blockquote></div>
+          <div class="thesis-side">
+            <div class="mini"><strong>Con</strong><p>Co-diseño, escucha, pares locales y decisiones comunitarias.</p></div>
+            <div class="mini"><strong>Desde</strong><p>El suelo, el agua, la casa, el espacio colectivo y las economías locales.</p></div>
+            <div class="mini"><strong>Para</strong><p>Seguridad, habitabilidad, autonomía y desarrollo territorial resiliente.</p></div>
+            <div class="mini"><strong>Con límites</strong><p>Sin extrapolar hallazgos regionales a predios ni imponer una única tipología.</p></div>
+          </div>
+        </div>
+        <div class="scope"><strong>Alcance de la evidencia.</strong> Los hallazgos provienen del recorrido y de las comunidades visitadas; no describen de manera uniforme a todo el departamento. La propuesta es un marco adaptable que debe validarse territorialmente antes de cada intervención.</div>
+      </div>
+    </section>
+
+    <section id="mapa" class="section-alt">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">02 · Mapa sistémico</div><h2>El río articula la respuesta</h2></div>
+          <p class="section-intro">Más que una frontera o una amenaza, el río es vía, economía, memoria, encuentro y acceso a servicios. La propuesta lo reconoce como espina dorsal de un sistema de nodos territoriales, sin desconocer inundación, socavación, erosión de margen y movilidad del cauce.</p>
+        </div>
+        <div class="map-shell">
+          <div class="map-label"><strong>Mapa visual de articulación territorial</strong><span>Esquema conceptual; no corresponde a cartografía de delimitación o riesgo.</span></div>
+          <div class="system-map">
+            <article class="map-node"><b>Capa 1 · Conocer</b><strong>Territorio vivo</strong><p>Inventario georreferenciado, memoria comunitaria, suelo, agua, daño, conectividad y tenencia.</p></article>
+            <article class="map-node"><b>Capa 2 · Aprender</b><strong>Escuela territorial</strong><p>Formación técnica, cartillas adaptables, prototipos demostrativos y certificación de capacidades.</p></article>
+            <article class="map-node"><b>Capa 3 · Habitar</b><strong>Vivienda segura y productiva</strong><p>Reparación o reconstrucción situada, bioclimática, mantenible y compatible con la vida familiar.</p></article>
+            <article class="map-node"><b>Capa 4 · Gobernar</b><strong>Nodos de decisión</strong><p>Consejos comunitarios, entidades, academia, organizaciones y empresa privada con trazabilidad.</p></article>
+          </div>
+          <div class="map-foot"><span class="chip">Quibdó</span><span class="chip">Nóvita</span><span class="chip">Andagoya</span><span class="chip">Bebedó</span><span class="chip">Nóanamá</span><span class="chip">Isla de Cruz</span><span class="chip">Dipordú</span><span class="chip">Atrato y San Juan</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diagnostico">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">03 · Problema público</div><h2>De la causa al efecto</h2></div>
+          <p class="section-intro">El terremoto actuó como detonante y revelador de vulnerabilidades acumuladas. Esta lectura evita atribuir todo daño al evento y orienta inversiones hacia las causas que pueden reducirse.</p>
+        </div>
+        <div class="flow">
+          <article class="flow-col cause"><h4>Condiciones estructurales</h4><ul class="clean"><li>Terrenos saturados, bajos, humedales, paleocauces, rellenos y depósitos aluviales heterogéneos.</li><li>Inundación recurrente, drenaje deficiente, socavación y erosión de riberas.</li><li>Construcción progresiva sin asistencia técnica suficiente y mantenimiento desigual.</li><li>Dispersión poblacional, acceso principalmente fluvial y presencia institucional intermitente.</li><li>Regímenes colectivos de suelo poco comprendidos por programas convencionales.</li></ul></article>
+          <div class="arrow">→</div>
+          <article class="flow-col pressure"><h4>Presiones y detonantes</h4><ul class="clean"><li>Sacudimiento sísmico sobre estructuras y suelos con respuestas distintas.</li><li>Sobrecarga por agua, fluctuación del nivel freático y procesos de consolidación.</li><li>Deficiencias de detalle, confinamiento, cimentación o ejecución en mampostería y concreto.</li><li>Deterioro biológico o pérdida de apoyo en elementos de madera.</li><li>Decisiones de ocupación o inversión sin información predial suficiente.</li></ul></article>
+          <div class="arrow">→</div>
+          <article class="flow-col effect"><h4>Efectos observados o probables</h4><ul class="clean"><li>Asentamientos diferenciales, inclinación, fisuración, colapso parcial o total.</li><li>Viviendas y equipamientos con restricciones de uso o necesidad de peritaje.</li><li>Pérdida de patrimonio familiar, inseguridad y afectación del tejido social.</li><li>Aislamiento de comunidades y mayor costo de materiales y servicios.</li><li>Riesgo de reconstruir la vulnerabilidad si se replica la solución anterior.</li></ul></article>
+        </div>
+        <div class="warning"><strong>Precisión geotécnica.</strong> No toda deformación post-sismo es licuación. En arcillas blandas, turbas o rellenos mal compactados pueden dominar asentamiento y consolidación; confirmar mecanismos exige exploración y ensayos. De igual modo, ni el concreto es intrínsecamente inadecuado ni la madera es automáticamente segura: el desempeño depende del sitio, el diseño, la ejecución, la protección, el mantenimiento y la interacción suelo-estructura.</div>
+      </div>
+    </section>
+
+    <section id="propuesta" class="section-alt">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">04 · Propuesta integrada</div><h2>Sistema Territorial de Reconstrucción y Hábitat Resiliente</h2></div>
+          <p class="section-intro"><strong>Objetivo:</strong> reparar y reconstruir hábitats seguros, adaptables y productivos mediante una red de conocimiento territorial, formación para la autogestión, soluciones técnicas situadas y gobernanza comunitaria con capacidad pública.</p>
+        </div>
+        <div class="components">
+          <article class="component">
+            <div class="component-top"><div class="num">1</div><div><h3>Atlas vivo de riesgo, hábitat y capacidades</h3><p>Una base territorial interoperable que combine evidencia técnica, memoria comunitaria y decisiones.</p></div></div>
+            <div class="component-body"><ul class="clean"><li>Inventario georreferenciado de viviendas, equipamientos, señales activas, bordes de ribera y rutas.</li><li>Ficha única: daño, habitabilidad, suelo, agua, posición geomorfológica, tenencia/uso, vulnerabilidad social y capacidad local.</li><li>Monitoreo comunitario con puntos fotográficos fijos, marcas de inundación y protocolo de alertas.</li><li>Uso diferenciado de escalas: mapa regional para priorizar; estudio detallado para decidir en predio.</li></ul><div class="deliverables"><div class="deliverable"><b>Producto</b>Visor y tablero de priorización</div><div class="deliverable"><b>Uso</b>PMGRD, EOT/PBOT y PAE</div><div class="deliverable"><b>Custodia</b>Autoridad + comunidad</div></div><div class="discipline"><span class="tag">Geología y geotecnia</span><span class="tag">Ingeniería</span><span class="tag">Planeación</span><span class="tag">Conocimiento local</span></div></div>
+          </article>
+          <article class="component">
+            <div class="component-top"><div class="num">2</div><div><h3>Escuela territorial de hábitat y autoconstrucción segura</h3><p>Convertir un saber existente en una capacidad fortalecida, acompañada y replicable.</p></div></div>
+            <div class="component-body"><ul class="clean"><li>Cartillas visuales y modulares para madera, sistemas mixtos, mampostería y concreto, diferenciadas por ambiente.</li><li>Formación práctica en cimentaciones, uniones, arriostramiento, drenaje, cubiertas, mantenimiento y seguridad.</li><li>Modelo “equipo visitante + par local”: maestro/a, joven o técnico/a formado para continuidad y seguimiento.</li><li>Alianzas con SENA, universidades públicas y privadas, organizaciones locales y voluntariado especializado.</li></ul><div class="deliverables"><div class="deliverable"><b>Producto</b>Kit pedagógico abierto</div><div class="deliverable"><b>Práctica</b>Módulos demostrativos</div><div class="deliverable"><b>Legado</b>Formadores locales</div></div><div class="discipline"><span class="tag">Educación</span><span class="tag">Arquitectura</span><span class="tag">Ingeniería</span><span class="tag">Maestros locales</span></div></div>
+          </article>
+          <article class="component">
+            <div class="component-top"><div class="num">3</div><div><h3>Catálogo adaptable de reparación y vivienda</h3><p>No una casa tipo, sino reglas y componentes combinables según familia, sitio, riesgo y economía.</p></div></div>
+            <div class="component-body"><ul class="clean"><li>Ruta previa: reparar, reforzar, reconstruir, relocalizar o no intervenir hasta estudiar.</li><li>Soluciones palafíticas o elevadas donde sean técnicamente pertinentes; cotas definidas con información hidráulica.</li><li>Ventilación e iluminación sin exposición directa a lluvia lateral: aleros, galerías, celosías, persianas y fachadas respirantes.</li><li>Cubiertas para captación segura de agua lluvia, con conducción, almacenamiento, tratamiento y rebose.</li><li>Cocina como núcleo doméstico y, cuando la familia lo decida, plataforma productiva; crecimiento progresivo y privacidad.</li><li>Madera local solo con manejo sostenible, trazabilidad, selección de especie, secado, protección y detalles durables.</li></ul><div class="deliverables"><div class="deliverable"><b>Producto</b>Familias de soluciones</div><div class="deliverable"><b>Validación</b>Prototipo 1:1</div><div class="deliverable"><b>Criterio</b>Costo de ciclo de vida</div></div><div class="discipline"><span class="tag">Arquitectura</span><span class="tag">Bioclimática</span><span class="tag">Estructuras</span><span class="tag">Hidráulica</span></div></div>
+          </article>
+          <article class="component">
+            <div class="component-top"><div class="num">4</div><div><h3>Nodos ribereños de servicios y gobernanza</h3><p>Equipamientos existentes o recuperados como puntos de presencia institucional y conexión.</p></div></div>
+            <div class="component-body"><ul class="clean"><li>Escuelas, centros comunitarios, bibliotecas o espacios religiosos como nodos temporales de formación, información y gestión.</li><li>Red fluvial con rutas, frecuencias y protocolos de servicio; evaluar esquemas públicos o público-comunitarios.</li><li>Servicios móviles donde la dispersión lo justifique: salud fluvial, asistencia técnica itinerante y brigadas de mantenimiento.</li><li>Espacio de encuentro como infraestructura: calle, pasarela, embarcadero, cocina colectiva y plaza.</li><li>Plan de seguridad y acceso diferenciado para contextos con restricciones de orden público, sin publicar datos sensibles.</li></ul><div class="deliverables"><div class="deliverable"><b>Producto</b>Red de nodos priorizados</div><div class="deliverable"><b>Conector</b>Movilidad fluvial</div><div class="deliverable"><b>Servicio</b>Oferta pública itinerante</div></div><div class="discipline"><span class="tag">Territorio</span><span class="tag">Gobernanza</span><span class="tag">Movilidad</span><span class="tag">Diseño urbano</span></div></div>
+          </article>
+          <article class="component component-wide">
+            <div class="component-top"><div class="num">5</div><div><h3>Economías de la reconstrucción y del cuidado territorial</h3><p>La inversión física debe dejar capacidades, empleo y circuitos locales; no limitarse a trasladar materiales externos.</p></div></div>
+            <div class="component-body"><div class="subgrid"><div class="sub"><b>Cadena de madera responsable</b><p>Manejo forestal legal, transformación local, carpintería, tratamiento, estandarización de piezas y mantenimiento.</p></div><div class="sub"><b>Gastronomía y autonomía</b><p>Cocinas seguras y productivas, formación empresarial, comercialización y acceso a capital, reconociendo el liderazgo de las mujeres sin reforzar cargas de cuidado no remuneradas.</p></div><div class="sub"><b>Logística fluvial</b><p>Compras agregadas, bancos de materiales y rutas programadas para reducir costos y tiempos de traslado.</p></div><div class="sub"><b>Mantenimiento</b><p>Cuadrillas locales certificadas para inspección, reparación preventiva y atención pos-evento.</p></div><div class="sub"><b>Turismo de largo plazo</b><p>Solo después de seguridad, servicios y gobernanza: gastronomía, paisaje y cultura bajo control comunitario.</p></div><div class="sub"><b>Compras locales</b><p>Cláusulas de empleo, proveeduría, transferencia tecnológica y rendición de cuentas en contratos y alianzas.</p></div></div><div class="discipline"><span class="tag">Desarrollo económico</span><span class="tag">Género</span><span class="tag">Sostenibilidad</span><span class="tag">Gestión de proyectos</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="decisiones">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">05 · Puertas de decisión</div><h2>Antes de construir, decidir bien</h2></div>
+          <p class="section-intro">Cada intervención pasa por tres filtros simultáneos: seguridad del sitio, legitimidad territorial y viabilidad de la solución. La emergencia no elimina la responsabilidad técnica ni la participación.</p>
+        </div>
+        <div class="gates">
+          <article class="gate red"><div class="dot"></div><h3>No construir todavía</h3><p>Señales activas, concepto rojo, socavación crítica, riesgo alto no mitigable o información insuficiente. Evacuar/apuntalar cuando corresponda y contratar estudios.</p></article>
+          <article class="gate amber"><div class="dot"></div><h3>Estudiar y condicionar</h3><p>Reparación posible sujeta a peritaje estructural, caracterización geotécnica, hidráulica, definición predial y acuerdo comunitario.</p></article>
+          <article class="gate green"><div class="dot"></div><h3>Intervenir y acompañar</h3><p>Sitio apto, diseño validado, responsabilidades claras, presupuesto de mantenimiento, supervisión e indicadores de resultado.</p></article>
+        </div>
+        <div class="warning"><strong>Ruta predial y étnico-territorial.</strong> La elegibilidad no debe reducirse a una escritura individual. En territorios colectivos o con ocupación ancestral, la solución exige concertar con el consejo comunitario y documentar autoridad, asignación familiar de uso, disponibilidad del suelo, titularidad de la mejora, responsabilidades, mantenimiento y garantías, sin fragmentar la propiedad colectiva.</div>
+      </div>
+    </section>
+
+    <section id="teoria" class="section-alt">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">06 · Teoría del cambio</div><h2>Cómo la intervención produce desarrollo</h2></div>
+          <p class="section-intro"><strong>Hipótesis:</strong> si las comunidades, autoridades y equipos técnicos comparten una base territorial confiable, toman decisiones vinculantes en conjunto y construyen capacidades locales, entonces la inversión física podrá reducir riesgo y mejorar habitabilidad, conectividad y autonomía sin debilitar el arraigo ni la propiedad colectiva.</p>
+        </div>
+        <div class="theory">
+          <div class="theory-step"><b>Insumos</b><h3>Confianza y evidencia</h3><p>Memoria comunitaria, datos de campo, saber técnico, institucionalidad, recursos y redes locales.</p></div>
+          <div class="theory-step"><b>Productos</b><h3>Herramientas comunes</h3><p>Atlas vivo, escuela territorial, catálogo adaptable, pilotos, nodos y reglas de gobernanza.</p></div>
+          <div class="theory-step"><b>Resultados</b><h3>Capacidad y seguridad</h3><p>Mejores decisiones prediales, vivienda habitable, pares locales, servicios conectados y empleo.</p></div>
+          <div class="theory-step"><b>Impacto</b><h3>Resiliencia territorial</h3><p>Menor riesgo, mayor autonomía, patrimonio protegido y desarrollo compatible con río y cultura.</p></div>
+        </div>
+        <div class="warning"><strong>Condiciones necesarias.</strong> Acceso seguro, financiación plurianual, coordinación pública, autoridad comunitaria reconocida, estudios de detalle, transparencia y presupuesto de operación y mantenimiento.</div>
+      </div>
+    </section>
+
+    <section id="ruta">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">07 · Temporalidades</div><h2>Hoja de ruta por horizontes</h2></div>
+          <p class="section-intro">La secuencia sigue la pauta del challenge y debe articularse con los Planes de Acción Específicos: corto plazo, horas a un año; mediano, dos a tres años; largo, cinco años o más.</p>
+        </div>
+        <div class="timeline">
+          <article class="phase"><div class="time">Corto plazo · Horas a 1 año</div><h3>Estabilizar y conocer</h3><ol><li>Evacuación, apuntalamiento y control de elementos inestables según conceptos técnicos.</li><li>Inventario único y georreferenciado; inspección rápida de salud y educación.</li><li>Monitoreo comunitario de grietas, asentamientos, drenaje y riberas.</li><li>Estudios geotécnicos e hidráulicos prioritarios y términos de referencia.</li><li>Prototipo pedagógico y primera cohorte de pares/formadores locales.</li><li>Selección participativa de dos pilotos contrastantes, sin predeterminarlos.</li></ol></article>
+          <article class="phase"><div class="time">Mediano plazo · 2 a 3 años</div><h3>Recuperar y conectar</h3><ol><li>Reparación, reforzamiento o reconstrucción de viviendas y equipamientos priorizados.</li><li>Escuela territorial operando con SENA, universidades y cuadrillas locales.</li><li>Nodos ribereños con servicios, embarcaderos seguros y logística programada.</li><li>Catálogo validado de soluciones por ambientes y seguimiento posocupación.</li><li>Cadenas locales de materiales, gastronomía y mantenimiento.</li><li>Integración de resultados en PMGRD, EOT/PBOT y presupuestos.</li></ol></article>
+          <article class="phase"><div class="time">Largo plazo · 5 años o más</div><h3>Transformar y sostener</h3><ol><li>Mitigación estructural de riberas y reasentamiento concertado donde el riesgo no sea mitigable.</li><li>Sistema formal de movilidad y servicios fluviales de alcance regional.</li><li>Red permanente de observación territorial y mantenimiento preventivo.</li><li>Escalamiento municipal/departamental con estándares adaptables.</li><li>Consolidación de economías territoriales sostenibles y turismo comunitario.</li><li>Evaluación de impacto en seguridad, bienestar, autonomía y resiliencia.</li></ol></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenge">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">08 · Formato de resultados</div><h2>Respuesta consolidada al challenge</h2></div>
+          <p class="section-intro">Síntesis redactada para trasladarse al formato de “Resultados Finales”, conservando los marcos solicitados y evitando duplicidades.</p>
+        </div>
+        <div class="challenge-grid">
+          <article class="answer-card"><div class="label">1 · Aspectos comunitarios</div><h3>Colectividad como infraestructura</h3><p>Las relaciones de ayuda, la vida fuera de la vivienda, la cultura fluvial, la hospitalidad, la limpieza, la fe, la memoria del territorio y la autoconstrucción son capacidades de recuperación. El proyecto parte de co-talleres y decisiones comunitarias; protege intimidad, cuidados, salud mental y patrimonio familiar; reconoce autoridades étnico-territoriales y evita narrativas de salvación externa.</p></article>
+          <article class="answer-card"><div class="label">2 · Aspectos físicos</div><h3>Suelo, agua, redes y economías</h3><p>La infraestructura debe leerse con el terreno y el río: saturación, rellenos, depósitos aluviales, paleocauces, pendientes, inundación y socavación. Se articulan vivienda, equipamientos, pasarelas, embarcaderos, servicios, movilidad y cadenas de materiales. La inversión pública, privada y comunitaria se concentra en nodos priorizados con supervisión y transparencia.</p></article>
+          <article class="answer-card full"><div class="label">3 · Marco formal</div><h3>Una metodología flexible, territorial y multiescalar</h3><div class="subgrid"><div class="sub"><b>3.1 Flexibilidad y adaptabilidad</b><p>Sistema de diagnóstico + reglas de decisión + catálogo de componentes. Responde a emergencia y se transforma en infraestructura, formación y mantenimiento permanente.</p></div><div class="sub"><b>3.2 Entorno y geografía</b><p>Soluciones diferenciadas por ambientes; integra paisaje, topografía, hidrología, clima, conectividad y gestión local del riesgo. Ningún mapa regional reemplaza el estudio predial.</p></div><div class="sub"><b>3.3 Escalabilidad</b><p>Opera en casa, calle, nodo, comunidad, corredor y municipio. Se replica como método, no como forma única, mediante datos comunes y decisiones situadas.</p></div></div></article>
+          <article class="answer-card"><div class="label">4 · Marco técnico</div><h3>Materialidad local</h3><p>Prioriza materiales disponibles y mantenibles cuando cumplan desempeño, legalidad y sostenibilidad. La madera requiere trazabilidad, tratamiento y detalle; concreto, mampostería o sistemas mixtos requieren diseño, confinamiento, cimentación y control de ejecución. Se compara costo total de ciclo de vida, no solo costo inicial.</p></article>
+          <article class="answer-card"><div class="label">4.2 · Marco técnico</div><h3>Innovación situada</h3><p>Combina palafito, bahareque, guadua, carpintería, autoconstrucción y memoria de inundaciones con análisis geotécnico, hidráulico y estructural, prototipado 1:1, captación de lluvia, soluciones bioclimáticas, monitoreo y herramientas abiertas.</p></article>
+          <article class="answer-card"><div class="label">5.1 · Marco de viabilidad</div><h3>Factibilidad de implementación</h3><p>Inicia con inventario y dos pilotos contrastantes. Define costo, cronograma, logística fluvial, permisos, suelo, diseños, operación y mantenimiento. Cada piloto debe contar con responsable público, autoridad comunitaria, equipo técnico, presupuesto y criterios de salida.</p></article>
+          <article class="answer-card"><div class="label">5.2 · Marco de viabilidad</div><h3>Estrategia de gestión</h3><p>Gobernanza multinivel con consejo comunitario y comunidad en decisión; municipio/CMGRD como articulador; CDGRD/UNGRD y sectores como soporte; academia y SENA en conocimiento; organizaciones como facilitadoras; empresa privada bajo reglas públicas, compras locales, interventoría y veeduría.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="escenarios" class="section-alt">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">09 · Trazabilidad creativa</div><h2>De los escenarios deseados a la propuesta</h2></div>
+          <p class="section-intro">Esta matriz conserva las nueve preguntas del ejercicio creativo y muestra cómo sus respuestas alimentan el sistema propuesto, sin repetir componentes ni individualizar aportes.</p>
+        </div>
+        <div class="matrix-wrap">
+          <table>
+            <thead><tr><th>#</th><th>Pregunta del escenario</th><th>Respuesta consolidada</th><th>Traducción en el proyecto</th></tr></thead>
+            <tbody>
+              <tr><td>01</td><td><strong>¿Cuáles son las prioridades e intereses?</strong></td><td>Salvar patrimonio y vida; contar con casa segura; recuperar presencia estatal; mejorar conectividad, educación y conocimiento del terreno.</td><td>Seguridad como puerta de entrada, atlas vivo, escuela y nodos institucionales.</td></tr>
+              <tr><td>02</td><td><strong>¿Qué problema concreto se prioriza?</strong></td><td>Reconstrucción insegura o desconectada del suelo, el río, la comunidad y la gobernanza.</td><td>Sistema integrado y puertas de decisión antes de intervenir.</td></tr>
+              <tr><td>03</td><td><strong>¿A quiénes beneficiará?</strong></td><td>Grupos comunitarios, hogares, agentes educativos, maestros locales y entidades gubernamentales.</td><td>Beneficiarios como coautores, operadores y veedores; no receptores pasivos.</td></tr>
+              <tr><td>04</td><td><strong>¿Cuál es el propósito?</strong></td><td>Convivir con el río, mejorar infraestructura y calidad de vida, reducir abandono y crear nodos de interés.</td><td>Hábitat resiliente, conectividad fluvial y presencia institucional de proximidad.</td></tr>
+              <tr><td>05</td><td><strong>¿Qué roles y conocimientos se requieren?</strong></td><td>Equipos técnicos, sociales y educativos; fuerzas y servicios con contexto; empresa privada; conocimiento profundo de suelo, agua y territorio.</td><td>Equipos interdisciplinarios acompañados siempre por un par local.</td></tr>
+              <tr><td>06</td><td><strong>¿Cómo se toman decisiones?</strong></td><td>Co-creación y escucha, autonomía local, consejos comunitarios, alcaldías, universidades, sector privado e interventoría.</td><td>Ciclo verificar–co-diseñar–aprobar–construir–medir, con responsabilidades registradas.</td></tr>
+              <tr><td>07</td><td><strong>¿Qué mecanismos permiten recibir recomendaciones?</strong></td><td>Política pública, alianzas bajo conducción pública, capacitación educativa y asistencia técnica para autoconstrucción.</td><td>Escuela territorial, contratación trazable, pilotos y canales comunitarios de reporte.</td></tr>
+              <tr><td>08</td><td><strong>¿Quién cuida los intereses y cómo?</strong></td><td>Comunidad, responsables públicos, privados sujetos a seguimiento e interventorías.</td><td>Veeduría comunitaria, supervisión profesional y tablero público de compromisos.</td></tr>
+              <tr><td>09</td><td><strong>¿Cuáles son los medidores de éxito?</strong></td><td>Interventoría correcta, web abierta, verificación de procedimientos y etapas, veeduría profesional y pública.</td><td>Indicadores de seguridad, capacidad, acceso, economía local, posocupación y transparencia.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="thesis-main" style="margin-top:20px"><blockquote style="font-size:1.7rem">¿Cómo podríamos reparar y reconstruir el hábitat con las comunidades ribereñas, combinando memoria territorial y conocimiento técnico para recuperar seguridad, patrimonio, conectividad y autonomía?</blockquote></div>
+      </div>
+    </section>
+
+    <section id="viabilidad">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">10 · Portafolio y priorización</div><h2>Qué activar primero</h2></div>
+          <p class="section-intro">La prioridad combina protección de vida, capacidad de desbloquear decisiones posteriores, viabilidad y valor demostrativo.</p>
+        </div>
+        <div class="matrix-wrap">
+          <table>
+            <thead><tr><th>Iniciativa</th><th>Impacto</th><th>Complejidad</th><th>Primer resultado verificable</th><th>Horizonte</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Inventario territorial integrado</strong></td><td><span class="pill high">Muy alto</span></td><td><span class="pill med">Media</span></td><td>Base única con fichas completas y responsables de actualización.</td><td><span class="pill pilot">0–6 meses</span></td></tr>
+              <tr><td><strong>Monitoreo de señales activas y ribera</strong></td><td><span class="pill high">Muy alto</span></td><td><span class="pill high">Baja–media</span></td><td>Puntos fijos, protocolo de alerta y reporte a CMGRD.</td><td><span class="pill pilot">0–3 meses</span></td></tr>
+              <tr><td><strong>Escuela + prototipo demostrativo</strong></td><td><span class="pill high">Alto</span></td><td><span class="pill med">Media</span></td><td>Kit pedagógico probado y primera cohorte local.</td><td><span class="pill pilot">3–9 meses</span></td></tr>
+              <tr><td><strong>Pilotos de vivienda situada</strong></td><td><span class="pill high">Alto</span></td><td><span class="pill med">Alta</span></td><td>Dos soluciones construidas, habitadas y evaluadas.</td><td><span class="pill pilot">6–18 meses</span></td></tr>
+              <tr><td><strong>Nodo ribereño de servicios</strong></td><td><span class="pill high">Alto</span></td><td><span class="pill med">Alta</span></td><td>Equipamiento operativo con ruta y oferta programada.</td><td><span class="pill pilot">12–36 meses</span></td></tr>
+              <tr><td><strong>Cadena de madera y mantenimiento</strong></td><td><span class="pill high">Alto</span></td><td><span class="pill med">Alta</span></td><td>Proveedores trazables, taller y cuadrilla certificada.</td><td><span class="pill pilot">12–36 meses</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="gobernanza">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">11 · Gobernanza</div><h2>Decidir, ejecutar y responder</h2></div>
+          <p class="section-intro">La participación no es socialización posterior. La comunidad interviene en diagnóstico, selección, diseño, ejecución, seguimiento y evaluación.</p>
+        </div>
+        <div class="governance">
+          <div class="actor-list">
+            <div class="actor"><b>Comunidades y consejos</b><span>Definen prioridades, validan usos del suelo, aportan memoria territorial, seleccionan pares locales y ejercen veeduría.</span></div>
+            <div class="actor"><b>Municipios y CMGRD</b><span>Consolidan información, adoptan decisiones, contratan estudios, articulan servicios y responden por operación local.</span></div>
+            <div class="actor"><b>Departamento y Nación</b><span>Financian, habilitan asistencia técnica, coordinan sectores e incorporan resultados a instrumentos y PAE.</span></div>
+            <div class="actor"><b>Academia y SENA</b><span>Co-producen conocimiento, forman, prototipan, documentan y evalúan sin sustituir competencias públicas.</span></div>
+            <div class="actor"><b>Organizaciones sociales</b><span>Facilitan acceso, confianza, logística, comunicación y acompañamiento con protocolos de seguridad.</span></div>
+            <div class="actor"><b>Empresa privada</b><span>Aporta recursos, logística, tecnología y mercado bajo reglas públicas/comunitarias, compras locales e interventoría independiente.</span></div>
+          </div>
+          <aside class="decision"><h3>Ciclo mínimo de decisión</h3><ol><li><strong>Verificar:</strong> sitio, daño, riesgo, actores, suelo y derechos de uso.</li><li><strong>Co-diseñar:</strong> necesidades, alternativas, costos, impactos y mantenimiento.</li><li><strong>Aprobar:</strong> comunidad/autoridad territorial, responsable técnico y entidad competente.</li><li><strong>Construir:</strong> supervisión, seguridad, empleo y compras locales, trazabilidad.</li><li><strong>Habitar y medir:</strong> posocupación, mantenimiento, alertas, aprendizaje y ajuste.</li></ol><p class="note">Cada equipo externo trabaja con un par local. Cada decisión deja registro público, salvo información sensible de seguridad.</p></aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="medicion" class="section-alt">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">12 · Resultados y medición</div><h2>Éxito es reducir riesgo y dejar capacidad</h2></div>
+          <p class="section-intro">Los indicadores deben desagregarse por territorio, género, edad y condición diferencial cuando sea pertinente, y combinar productos, resultados y percepción comunitaria.</p>
+        </div>
+        <div class="indicators">
+          <div class="indicator"><b>100%</b><span>de intervenciones con ficha de sitio, decisión predial y responsable técnico.</span></div>
+          <div class="indicator"><b>0</b><span>obras nuevas iniciadas en sectores rojos sin estudio o decisión de manejo.</span></div>
+          <div class="indicator"><b>≥1</b><span>par local formado y activo por comunidad piloto.</span></div>
+          <div class="indicator"><b>100%</b><span>de pilotos con evaluación posocupación y plan de mantenimiento.</span></div>
+          <div class="indicator"><b>↓</b><span>tiempo de acceso a asistencia técnica y servicios desde comunidades ribereñas.</span></div>
+          <div class="indicator"><b>↑</b><span>hogares que reportan seguridad, confort, privacidad y apropiación.</span></div>
+          <div class="indicator"><b>↑</b><span>proporción de inversión que permanece en empleo y proveeduría local.</span></div>
+          <div class="indicator"><b>Abierto</b><span>tablero con contratos, avances, pruebas, alertas e interventoría.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="alertas">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">13 · Alertas de diseño</div><h2>Lo que la propuesta debe evitar</h2></div>
+          <p class="section-intro">Estas alertas recogen tensiones técnicas, sociales e institucionales señaladas durante el ejercicio.</p>
+        </div>
+        <div class="risks">
+          <div class="risk"><i>!</i><div><h3>Casa tipo universal</h3><p>Reemplazar por familias de soluciones según ambiente, hogar, riesgo, uso y capacidad de mantenimiento.</p></div></div>
+          <div class="risk"><i>!</i><div><h3>Cartilla como licencia técnica</h3><p>La guía forma y orienta; no sustituye estudios, diseño, permisos ni responsabilidad profesional cuando sean exigibles.</p></div></div>
+          <div class="risk"><i>!</i><div><h3>Material “salvador”</h3><p>No idealizar madera, concreto o módulos. Evaluar desempeño, procedencia, durabilidad, logística y ciclo de vida.</p></div></div>
+          <div class="risk"><i>!</i><div><h3>Reubicación automática</h3><p>No separar a la población del río por defecto. Diferenciar mitigación, adaptación o relocalización concertada según riesgo.</p></div></div>
+          <div class="risk"><i>!</i><div><h3>Propiedad individual como filtro</h3><p>Diseñar rutas compatibles con propiedad colectiva, asignación familiar de uso y titularidad de mejoras.</p></div></div>
+          <div class="risk"><i>!</i><div><h3>Participación simbólica</h3><p>Dar poder real en priorización, diseño, contratación, seguimiento y evaluación, no solo validar decisiones tomadas.</p></div></div>
+          <div class="risk"><i>!</i><div><h3>Economía sin salvaguardas</h3><p>Evitar extracción forestal no sostenible, captura de beneficios y sobrecarga económica o de cuidados sobre las mujeres.</p></div></div>
+          <div class="risk"><i>!</i><div><h3>Exposición de seguridad</h3><p>Separar la versión pública del registro operativo reservado en zonas con control armado o riesgos para líderes y equipos.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="preguntas" class="section-alt">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">14 · Agenda de validación</div><h2>Preguntas antes del siguiente corte</h2></div>
+          <p class="section-intro">El siguiente paso no es cerrar la solución, sino completar la evidencia que permite escoger un piloto y comprometer responsables.</p>
+        </div>
+        <details open><summary>¿Cuál es la unidad territorial inicial?</summary><div>Definir si el piloto se organiza por comunidad, microcuenca, tramo de río, municipio o red de nodos. La recomendación preliminar es escoger dos contextos contrastantes con información suficiente y condiciones de acceso seguras.</div></details>
+        <details><summary>¿Qué necesita cada territorio para “volver a funcionar” con mayor calidad de vida?</summary><div>Construir una línea base comunitaria sobre vivienda, agua, movilidad, salud, educación, economías, cuidados, gobernanza, seguridad y percepción de riesgo. No confundir recuperación de servicios con retorno a la vulnerabilidad previa.</div></details>
+        <details><summary>¿Qué intervenciones se pueden reparar y cuáles requieren reforzar, reconstruir o relocalizar?</summary><div>Aplicar inspección AIS–IDIGER, estudio estructural, caracterización geotécnica/hidráulica y decisión territorial. Registrar incertidumbre y no extrapolar resultados entre predios.</div></details>
+        <details><summary>¿Quién será dueño, operador y mantenedor de datos, nodos y prototipos?</summary><div>Asignar desde el inicio responsable comunitario, entidad pública competente, equipo técnico, fuente de operación y mecanismo de rendición de cuentas. Sin ello, el proyecto puede construir activos sin sostenibilidad.</div></details>
+        <details><summary>¿Qué régimen de suelo y autoridad aplica en cada sitio?</summary><div>Caracterizar título colectivo, ocupación ancestral, suelo urbano/informal, predio privado, área de protección y condición de riesgo. Concertar documentos habilitantes sin exigir fragmentación de la propiedad colectiva.</div></details>
+        <details><summary>¿Cómo se gestionará el acceso y la seguridad?</summary><div>Elaborar protocolos diferenciados con actores locales legítimos, análisis de contexto, rutas de comunicación y reglas de protección de datos; no normalizar ni publicitar interlocuciones sensibles.</div></details>
+      </div>
+    </section>
+
+    <section id="fuentes">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <div><div class="kicker">15 · Método y fuentes</div><h2>Base de la sistematización</h2></div>
+          <p class="section-intro">La propuesta integra aportes colectivos de arquitectura, ingeniería civil, geología/geotecnia, diseño, docencia y experiencia territorial. Las disciplinas se hacen visibles como capas de conocimiento, no como autorías separadas de una solución común.</p>
+        </div>
+        <ul class="source-list">
+          <li><strong>Community Challenge, Universidad de los Andes.</strong> Hoja de ruta “Reparar para habitar después del terremoto”, formatos de proceso creativo, escenarios deseados y resultados finales suministrados por el equipo.</li>
+          <li><strong>Mesa Territorio.</strong> Lluvia de ideas y relatos de profesionales desplegados, estudiantes y docente de Arquitectura y Diseño, septiembre de 2026.</li>
+          <li><strong>Delgadillo Marín, J. (2026).</strong> <em>Concepto técnico geológico y geotécnico de campo: reconocimiento territorial, dinámica del terreno y catálogo cartográfico SOSChocó</em>, versión 1.3.</li>
+          <li><strong>Latour, B. (2005).</strong> <em>Reassembling the Social: An Introduction to Actor-Network-Theory.</em> Oxford University Press. Marco conceptual citado por el challenge.</li>
+          <li><strong>USGS.</strong> Evento <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2" target="_blank" rel="noreferrer">us6000tjl2</a>: Mww 7,4, 10 de agosto de 2026; utilizar magnitud, intensidad y daño como conceptos diferentes.</li>
+          <li><strong>Colombia.</strong> <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=47141" target="_blank" rel="noreferrer">Ley 1523 de 2012</a>, Política Nacional de Gestión del Riesgo de Desastres.</li>
+          <li><strong>UNGRD.</strong> <a href="https://portal.gestiondelriesgo.gov.co/paginas/plan-nacional-de-gestion-del-riesgo.aspx" target="_blank" rel="noreferrer">Plan Nacional de Gestión del Riesgo de Desastres 2015–2030</a> y temporalidades de los PAE.</li>
+          <li><strong>MinVivienda / Comisión Asesora.</strong> NSR-10, Título H — Estudios geotécnicos, con sus modificaciones aplicables; verificar texto consolidado en cada trámite.</li>
+          <li><strong>Colombia.</strong> Decreto 1077 de 2015: incorporación de gestión del riesgo y estudios básicos/detallados en el ordenamiento.</li>
+          <li><strong>Colombia.</strong> <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=7388" target="_blank" rel="noreferrer">Ley 70 de 1993</a>: reconocimiento de derechos de comunidades negras y propiedad colectiva.</li>
+        </ul>
+        <div class="warning"><strong>Control de calidad documental.</strong> La portada/resumen del informe técnico contiene una referencia al “evento sísmico del 21 de agosto de 2026”, mientras el identificador USGS citado corresponde al 10 de agosto de 2026. Antes de circular una versión definitiva, debe corregirse esa inconsistencia editorial en la fuente o dejar constancia formal de la aclaración.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div><div class="eyebrow">Equipo Territorio</div><h2>Una reconstrucción con agencia territorial</h2></div>
+      <div><p><strong>Resultado central:</strong> un sistema que conoce antes de intervenir, aprende mientras construye y deja capacidad para gobernar, mantener y adaptar el hábitat.</p><p class="note">Documento inicial para validación comunitaria, técnica e institucional. No reemplaza conceptos de habitabilidad, estudios prediales, diseños, licencias ni decisiones de las autoridades competentes.</p></div>
+    </div>
+  </footer>
+  <script>
+    const io = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on') }), {threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
