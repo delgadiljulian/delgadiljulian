@@ -11,7 +11,7 @@ Geologist with a strong interest in subsurface data and geological information. 
 ## Technologies & Tools
 
 Programming & Data Analysis:  
-Python, Google Colab, JavaScript, STATA, MATLAB, R, HTML
+Python, Google Colab, JavaScript, STATA, MATLAB, R, HTML, SQL
 
 Geospatial & Earth Science Software:  
 ArcGIS Pro, QGIS
